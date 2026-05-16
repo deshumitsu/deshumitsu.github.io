@@ -536,6 +536,7 @@ a.card:focus-visible {
 
 .compare-panel {
   padding: 16px;
+  min-width: 0;
 }
 
 .image-browser {
@@ -740,6 +741,7 @@ select:focus {
   grid-column: 2;
   position: relative;
   padding: 16px;
+  min-width: 0;
 }
 
 .compare-header {
@@ -1103,6 +1105,7 @@ td {
 
 @media (max-width: 980px) {
   .hero-grid,
+  .compare-topbar,
   .compare-layout,
   .tool-entry,
   .tool-card,
@@ -1121,6 +1124,11 @@ td {
 
   .overview-image {
     min-height: 210px;
+  }
+
+  .compare-topbar .help-tooltip {
+    grid-column: 1;
+    justify-self: end;
   }
 
   .compare-stage,
@@ -1152,6 +1160,14 @@ td {
   .container,
   .narrow {
     width: min(100% - 24px, 1180px);
+  }
+
+  .compare-container {
+    width: min(100% - 20px, 1920px);
+  }
+
+  .compare-panel {
+    padding: 14px;
   }
 
   .hero {

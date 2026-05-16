@@ -233,6 +233,10 @@ function setZoom(value) {
 }
 
 function zoomWithWheel(event) {
+  if (event.currentTarget === overviewGrid && !event.target.closest(".overview-image")) {
+    return;
+  }
+
   event.preventDefault();
 
   const direction = event.deltaY < 0 ? 1 : -1;

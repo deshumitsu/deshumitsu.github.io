@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upscale Lab - Методика</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">Upscale Lab</a>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="methodology.html" class="active">Методика</a>
+      <a href="tools.html">Инструменты</a>
+      <a href="compare.html">Сравнение</a>
+      <a href="results.html">Результаты</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <section class="container">
+    <div class="page-title">
+      <h1>Методика практической оценки</h1>
+      <p>
+        Для обеспечения сопоставимости результатов все изображения обрабатывались по единой схеме:
+        исходный файл уменьшался до 960×540 пикселей, после чего увеличивался выбранными инструментами
+        до размера 3840×2160 пикселей.
+      </p>
+    </div>
+
+    <div class="method-grid">
+      <article class="card">
+        <h3>1. Подготовка изображений</h3>
+        <p>
+          Для каждого тестового изображения сохранялся эталонный вариант размером 3840×2160 пикселей.
+          Затем создавалась уменьшенная версия 960×540 пикселей, используемая как входной файл для обработки.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>2. Обработка</h3>
+        <p>
+          Уменьшенные изображения последовательно обрабатывались в Upscayl, Topaz Gigapixel AI,
+          ON1 Resize AI 2026, Waifu2xGUIExtension и Aiarty Image Enhancer.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>3. Визуальная оценка</h3>
+        <p>
+          Результаты сравнивались с эталонным изображением по детализации, чёткости контуров,
+          естественности восприятия, цветопередаче и наличию артефактов.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>4. Числовые метрики</h3>
+        <p>
+          Дополнительно применялись метрики PSNR и SSIM, позволяющие оценить степень отличия результата
+          обработки от эталонного изображения.
+        </p>
+      </article>
+    </div>
+
+    <section class="section compact">
+      <div class="section-heading">
+        <h2>Категории изображений</h2>
+      </div>
+
+      <div class="category-list">
+        <div class="category-item">
+          <h3>Фотографические изображения</h3>
+          <p>Оценка естественных текстур, плавных переходов, мелких деталей и цветопередачи.</p>
+        </div>
+        <div class="category-item">
+          <h3>Портретные изображения</h3>
+          <p>Оценка сохранения лица, кожи, волос, одежды и фоновых деталей.</p>
+        </div>
+        <div class="category-item">
+          <h3>Скриншоты из цифровой среды</h3>
+          <p>Оценка сложных сцен, содержащих искусственное освещение, текстуры и мелкие элементы.</p>
+        </div>
+        <div class="category-item">
+          <h3>Двумерная иллюстративная графика</h3>
+          <p>Оценка контуров, линий, цветовых заливок и стилизованных элементов.</p>
+        </div>
+        <div class="category-item">
+          <h3>Текстовые, интерфейсные и логотипные элементы</h3>
+          <p>Оценка читаемости, формы символов, контрастных границ и мелких графических деталей.</p>
+        </div>
+      </div>
+    </section>
+  </section>
+</main>
+
+</body>
+</html>

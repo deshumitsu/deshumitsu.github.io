@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upscale Lab - Результаты</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">Upscale Lab</a>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="methodology.html">Методика</a>
+      <a href="tools.html">Инструменты</a>
+      <a href="compare.html">Сравнение</a>
+      <a href="results.html" class="active">Результаты</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <section class="container">
+    <div class="page-title">
+      <h1>Результаты практического анализа</h1>
+      <p>
+        В разделе представлены сводные результаты визуальной оценки и числовых метрик PSNR, SSIM и LPIPS
+        по категориям тестовых изображений.
+      </p>
+    </div>
+
+    <section class="section compact">
+      <div class="section-heading">
+        <h2>Средние визуальные оценки</h2>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+          <tr>
+            <th>Категория</th>
+            <th>Upscayl</th>
+            <th>Topaz</th>
+            <th>ON1</th>
+            <th>Waifu2x</th>
+            <th>Aiarty</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Фотографические изображения</td>
+            <td>5,3</td>
+            <td>7,0</td>
+            <td>5,0</td>
+            <td>5,0</td>
+            <td>3,7</td>
+          </tr>
+          <tr>
+            <td>Портретные изображения</td>
+            <td>4,3</td>
+            <td>6,0</td>
+            <td>2,7</td>
+            <td>8,0</td>
+            <td>2,3</td>
+          </tr>
+          <tr>
+            <td>Скриншоты из цифровой среды</td>
+            <td>6,7</td>
+            <td>5,0</td>
+            <td>2,0</td>
+            <td>3,3</td>
+            <td>2,8</td>
+          </tr>
+          <tr>
+            <td>Двумерная иллюстративная графика</td>
+            <td>4,3</td>
+            <td>5,7</td>
+            <td>1,3</td>
+            <td>10,0</td>
+            <td>2,7</td>
+          </tr>
+          <tr>
+            <td>Текстовые, интерфейсные и логотипные элементы</td>
+            <td>7,3</td>
+            <td>6,7</td>
+            <td>2,3</td>
+            <td>8,0</td>
+            <td>3,7</td>
+          </tr>
+          <tr class="total-row">
+            <td>Средний балл</td>
+            <td>5,5</td>
+            <td>6,1</td>
+            <td>2,7</td>
+            <td>6,9</td>
+            <td>3,1</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="section-heading">
+        <h2>Средние значения PSNR</h2>
+        <p class="metric-note">
+          PSNR показывает соотношение между максимально возможным значением сигнала и уровнем искажений. Чем выше значение PSNR,
+          тем меньше отличие обработанного изображения от эталонного по пиксельной структуре.
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+          <tr>
+            <th>Категория</th>
+            <th>Upscayl</th>
+            <th>Topaz</th>
+            <th>ON1</th>
+            <th>Waifu2x</th>
+            <th>Aiarty</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Фотографические изображения</td>
+            <td>23,028</td>
+            <td>22,937</td>
+            <td>21,098</td>
+            <td>23,472</td>
+            <td>22,527</td>
+          </tr>
+          <tr>
+            <td>Портретные изображения</td>
+            <td>32,496</td>
+            <td>32,061</td>
+            <td>29,192</td>
+            <td>33,044</td>
+            <td>32,299</td>
+          </tr>
+          <tr>
+            <td>Скриншоты из цифровой среды</td>
+            <td>28,572</td>
+            <td>26,887</td>
+            <td>25,108</td>
+            <td>28,034</td>
+            <td>26,793</td>
+          </tr>
+          <tr>
+            <td>Двумерная иллюстративная графика</td>
+            <td>29,511</td>
+            <td>31,899</td>
+            <td>29,077</td>
+            <td>35,209</td>
+            <td>32,727</td>
+          </tr>
+          <tr>
+            <td>Текстовые, интерфейсные и логотипные элементы</td>
+            <td>28,768</td>
+            <td>27,986</td>
+            <td>25,396</td>
+            <td>28,895</td>
+            <td>26,632</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="section-heading">
+        <h2>Средние значения SSIM</h2>
+        <p class="metric-note">
+          SSIM используется для оценки структурного сходства двух изображений. Метрика учитывает яркость, контраст и структуру,
+          поэтому лучше отражает визуальное восприятие качества, чем простое сравнение пиксельных ошибок.
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+          <tr>
+            <th>Категория</th>
+            <th>Upscayl</th>
+            <th>Topaz</th>
+            <th>ON1</th>
+            <th>Waifu2x</th>
+            <th>Aiarty</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Фотографические изображения</td>
+            <td>0,7065</td>
+            <td>0,6547</td>
+            <td>0,5402</td>
+            <td>0,6884</td>
+            <td>0,6796</td>
+          </tr>
+          <tr>
+            <td>Портретные изображения</td>
+            <td>0,8947</td>
+            <td>0,8719</td>
+            <td>0,8499</td>
+            <td>0,8904</td>
+            <td>0,9020</td>
+          </tr>
+          <tr>
+            <td>Скриншоты из цифровой среды</td>
+            <td>0,8771</td>
+            <td>0,8022</td>
+            <td>0,7897</td>
+            <td>0,8569</td>
+            <td>0,8546</td>
+          </tr>
+          <tr>
+            <td>Двумерная иллюстративная графика</td>
+            <td>0,8453</td>
+            <td>0,8778</td>
+            <td>0,8424</td>
+            <td>0,9222</td>
+            <td>0,9054</td>
+          </tr>
+          <tr>
+            <td>Текстовые, интерфейсные и логотипные элементы</td>
+            <td>0,9658</td>
+            <td>0,9686</td>
+            <td>0,9440</td>
+            <td>0,9609</td>
+            <td>0,9576</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="section-heading">
+        <h2>Средние значения LPIPS</h2>
+        <p class="metric-note">
+          LPIPS оценивает визуальное сходство изображений с учетом признаков, извлекаемых нейросетевой моделью. В отличие от
+          традиционных пиксельных метрик, LPIPS лучше реагирует на perceptual-изменения, заметные человеку; меньшие значения
+          соответствуют большей близости к эталону.
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+          <tr>
+            <th>Категория</th>
+            <th>Upscayl</th>
+            <th>Topaz</th>
+            <th>ON1</th>
+            <th>Waifu2x</th>
+            <th>Aiarty</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Фотографические изображения</td>
+            <td>0,2131</td>
+            <td>0,2496</td>
+            <td>0,2883</td>
+            <td>0,2353</td>
+            <td>0,2422</td>
+          </tr>
+          <tr>
+            <td>Портретные изображения</td>
+            <td>0,1094</td>
+            <td>0,1453</td>
+            <td>0,2067</td>
+            <td>0,1293</td>
+            <td>0,1510</td>
+          </tr>
+          <tr>
+            <td>Скриншоты из цифровой среды</td>
+            <td>0,1053</td>
+            <td>0,1758</td>
+            <td>0,1875</td>
+            <td>0,1383</td>
+            <td>0,1363</td>
+          </tr>
+          <tr>
+            <td>Двумерная иллюстративная графика</td>
+            <td>0,1838</td>
+            <td>0,1468</td>
+            <td>0,1882</td>
+            <td>0,0581</td>
+            <td>0,1241</td>
+          </tr>
+          <tr>
+            <td>Текстовые, интерфейсные и логотипные элементы</td>
+            <td>0,0235</td>
+            <td>0,0231</td>
+            <td>0,0348</td>
+            <td>0,0217</td>
+            <td>0,0276</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="section-heading">
+        <h2>Обобщение результатов</h2>
+      </div>
+
+      <div class="cards three">
+        <article class="card highlight">
+          <h3>Waifu2xGUIExtension</h3>
+          <p>
+            Инструмент получил наиболее высокий средний визуальный балл и показал сильные результаты на иллюстративной графике,
+            текстовых и логотипных элементах. По LPIPS он также оказался наиболее близким к эталону в нескольких категориях.
+          </p>
+        </article>
+
+        <article class="card highlight">
+          <h3>Upscayl</h3>
+          <p>
+            Показал устойчивые результаты при обработке фотографий и скриншотов из цифровой среды. В этих категориях инструмент
+            хорошо сохраняет структуру изображения, что подтверждается значениями SSIM и LPIPS.
+          </p>
+        </article>
+
+        <article class="card highlight">
+          <h3>Topaz Gigapixel AI</h3>
+          <p>
+            Продемонстрировал высокие показатели SSIM на изображениях с текстовыми и логотипными элементами, а также стабильные
+            результаты на фотографиях. При этом визуальная оценка показывает, что итоговый результат зависит от категории изображения.
+          </p>
+        </article>
+      </div>
+    </section>
+  </section>
+</main>
+
+</body>
+</html>

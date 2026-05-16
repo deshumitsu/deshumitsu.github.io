@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upscale Lab - Сравнение</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">Upscale Lab</a>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="methodology.html">Методика</a>
+      <a href="tools.html">Инструменты</a>
+      <a href="compare.html" class="active">Сравнение</a>
+      <a href="results.html">Результаты</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <section class="container compare-container">
+    <div class="page-title">
+      <h1>Сравнение результатов обработки</h1>
+      <p>
+        Выберите категорию, тестовое изображение и программный инструмент. Ползунок позволяет
+        сопоставить уменьшенную версию, эталонное изображение и результат обработки.
+      </p>
+    </div>
+
+    <div class="compare-topbar">
+      <div class="help-tooltip" tabindex="0">
+        <span>Как пользоваться</span>
+        <span class="help-icon">?</span>
+        <div class="help-bubble">
+          Перемещайте вертикальный ползунок внутри изображения. Левая часть показывает выбранный
+          исходный вариант или инструмент, правая - результат обработки выбранным инструментом.
+          Слайдер над изображением изменяет масштаб для детального сравнения.
+        </div>
+      </div>
+    </div>
+
+    <div class="compare-layout">
+      <aside class="compare-panel">
+        <div class="image-browser" id="imageBrowser"></div>
+
+        <label for="leftSelect">Левая сторона</label>
+        <select id="leftSelect">
+          <option value="low">Уменьшенная версия</option>
+          <option value="original">Эталонное изображение</option>
+          <option value="tool">Инструмент</option>
+        </select>
+
+        <div class="left-tool-picker" id="leftToolPicker" hidden>
+          <div class="tool-browser" id="leftToolBrowser"></div>
+        </div>
+
+        <div class="info-box small">
+          <span>Показатели</span>
+          <p id="metricsText">Выберите изображение и инструмент.</p>
+        </div>
+      </aside>
+
+      <section class="compare-stage">
+        <div class="compare-header">
+          <span id="leftLabel">Уменьшенная версия</span>
+          <label class="zoom-control" aria-label="Масштаб изображения">
+            <svg class="zoom-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10" cy="10" r="6"></circle>
+              <path d="M14.5 14.5 20 20"></path>
+              <path d="M7.5 10h5"></path>
+            </svg>
+            <input id="zoomRange" type="range" min="1" max="10" step="0.1" value="1">
+            <svg class="zoom-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10" cy="10" r="6"></circle>
+              <path d="M14.5 14.5 20 20"></path>
+              <path d="M10 7.5v5"></path>
+              <path d="M7.5 10h5"></path>
+            </svg>
+          </label>
+          <span id="rightLabel">Результат обработки</span>
+        </div>
+
+        <div class="image-compare" id="imageCompare">
+          <img id="rightImage" class="compare-img" src="" alt="Результат обработки">
+          <div class="compare-left" id="compareLeft">
+            <img id="leftImage" class="compare-img" src="" alt="Исходный вариант">
+          </div>
+          <div class="compare-handle" id="compareHandle">
+            <span></span>
+          </div>
+        </div>
+
+        <div class="compare-actions">
+          <button class="reset-button" id="resetCompare" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 12a9 9 0 1 0 3-6.7"></path>
+              <path d="M3 4v6h6"></path>
+            </svg>
+            <span>Сброс</span>
+          </button>
+        </div>
+
+      </section>
+
+      <aside class="compare-panel tool-panel">
+        <div class="tool-browser" id="toolBrowser"></div>
+      </aside>
+    </div>
+
+    <section class="overview-section" aria-labelledby="overviewTitle">
+      <div class="overview-heading">
+        <h2 id="overviewTitle">Сводное сравнение результатов обработки</h2>
+        <p>
+          Здесь можно одновременно сравнить эталонное изображение, уменьшенную версию и результаты
+          обработки всех инструментов. Масштаб и перемещение синхронизируются во всех окнах витрины.
+        </p>
+      </div>
+
+      <div class="overview-grid" id="overviewGrid"></div>
+    </section>
+  </section>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/metrics.js"></script>
+<script src="js/compare.js"></script>
+</body>
+</html>

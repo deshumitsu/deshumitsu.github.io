@@ -632,6 +632,43 @@ select:focus {
   white-space: pre-line;
 }
 
+.left-side-picker {
+  margin-top: 18px;
+}
+
+.left-side-picker h3 {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: 16px;
+  letter-spacing: 0;
+}
+
+.left-choice-list {
+  display: grid;
+  gap: 10px;
+}
+
+.left-choice {
+  width: 100%;
+  min-height: 52px;
+  padding: 10px 14px;
+  color: var(--text);
+  text-align: left;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(36, 52, 77, 0.8);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.left-choice:hover,
+.left-choice:focus-visible,
+.left-choice.active {
+  transform: translateY(-2px);
+  border-color: rgba(94, 160, 255, 0.75);
+  background: rgba(94, 160, 255, 0.1);
+}
+
 .left-tool-picker {
   margin-top: 18px;
 }

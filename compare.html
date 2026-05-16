@@ -46,20 +46,17 @@
       <aside class="compare-panel">
         <div class="image-browser" id="imageBrowser"></div>
 
-        <label for="leftSelect">Левая сторона</label>
-        <select id="leftSelect">
-          <option value="low">Уменьшенная версия</option>
-          <option value="original">Эталонное изображение</option>
-          <option value="tool">Инструмент</option>
-        </select>
+        <div class="left-side-picker" id="leftSidePicker">
+          <h3>Левая сторона</h3>
+          <div class="left-choice-list">
+            <button class="left-choice active" type="button" data-left-type="low">Уменьшенная версия</button>
+            <button class="left-choice" type="button" data-left-type="original">Эталонное изображение</button>
+            <button class="left-choice" type="button" data-left-type="tool">Инструмент</button>
+          </div>
+        </div>
 
         <div class="left-tool-picker" id="leftToolPicker" hidden>
           <div class="tool-browser" id="leftToolBrowser"></div>
-        </div>
-
-        <div class="info-box small">
-          <span>Показатели</span>
-          <p id="metricsText">Выберите изображение и инструмент.</p>
         </div>
       </aside>
 
@@ -107,6 +104,10 @@
 
       <aside class="compare-panel tool-panel">
         <div class="tool-browser" id="toolBrowser"></div>
+        <div class="info-box small">
+          <span>Показатели</span>
+          <p id="metricsText">Выберите изображение и инструмент.</p>
+        </div>
       </aside>
     </div>
 

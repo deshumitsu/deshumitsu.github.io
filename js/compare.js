@@ -2,7 +2,7 @@ const imageBrowser = document.getElementById("imageBrowser");
 const toolBrowser = document.getElementById("toolBrowser");
 const leftToolBrowser = document.getElementById("leftToolBrowser");
 const leftToolPicker = document.getElementById("leftToolPicker");
-const leftSelect = document.getElementById("leftSelect");
+const leftSidePicker = document.getElementById("leftSidePicker");
 
 const leftImage = document.getElementById("leftImage");
 const rightImage = document.getElementById("rightImage");
@@ -31,6 +31,7 @@ let currentCategoryId = categories[0].id;
 let currentImageId = categories[0].images[0].id;
 let currentToolId = tools[0].id;
 let currentLeftToolId = tools[0].id;
+let currentLeftType = "low";
 
 const toolLogos = {
   upscayl: "images/logos/upscayl.png",
@@ -46,7 +47,7 @@ function init() {
   renderToolBrowser(leftToolBrowser, "left");
   updateComparison();
 
-  leftSelect.addEventListener("change", updateComparison);
+  leftSidePicker.addEventListener("click", selectLeftType);
   zoomRange.addEventListener("input", () => setZoom(zoomRange.value));
   resetCompare.addEventListener("click", resetComparisonView);
 
@@ -148,6 +149,15 @@ function selectTool(toolId, side) {
   updateComparison();
 }
 
+function selectLeftType(event) {
+  const button = event.target.closest(".left-choice");
+  if (!button) return;
+
+  currentLeftType = button.dataset.leftType;
+  updateActiveLeftType();
+  updateComparison();
+}
+
 function updateActiveThumbnail() {
   document.querySelectorAll(".image-thumb").forEach(button => {
     const isActive =
@@ -163,6 +173,12 @@ function updateActiveTool(side) {
 
   document.querySelectorAll(`.tool-choice[data-side="${side}"]`).forEach(button => {
     button.classList.toggle("active", button.dataset.toolId === selectedToolId);
+  });
+}
+
+function updateActiveLeftType() {
+  document.querySelectorAll(".left-choice").forEach(button => {
+    button.classList.toggle("active", button.dataset.leftType === currentLeftType);
   });
 }
 
@@ -188,7 +204,7 @@ function updateComparison() {
   const image = getCurrentImage();
   const tool = getCurrentTool();
   const leftTool = getCurrentLeftTool();
-  const leftType = leftSelect.value;
+  const leftType = currentLeftType;
 
   leftImage.src = getLeftSource(image, leftType, leftTool.id);
   rightImage.src = image.results[tool.id];
@@ -248,7 +264,8 @@ function zoomWithWheel(event) {
 }
 
 function resetComparisonView() {
-  leftSelect.value = "low";
+  currentLeftType = "low";
+  updateActiveLeftType();
   zoomRange.value = "1";
   setZoom(1);
   setPanPosition(0, 0);

@@ -1237,7 +1237,31 @@ td {
   }
 
   .compare-header {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding-top: 42px;
+  }
+
+  .compare-header span {
+    max-width: 100%;
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .compare-header span:first-child {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .compare-header span:last-child {
+    justify-self: end;
+    text-align: right;
+  }
+
+  .zoom-control {
+    top: 0;
+    width: min(210px, 100%);
   }
 
   .image-compare {

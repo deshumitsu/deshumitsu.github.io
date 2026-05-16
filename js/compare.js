@@ -209,8 +209,8 @@ function updateComparison() {
   leftImage.src = getLeftSource(image, leftType, leftTool.id);
   rightImage.src = image.results[tool.id];
 
-  leftLabel.textContent = getLeftLabel(leftType, leftTool.name);
-  rightLabel.textContent = tool.name;
+  leftLabel.textContent = getResponsiveLeftLabel(leftType, leftTool.name);
+  rightLabel.textContent = getResponsiveRightLabel(tool.name);
   updateLeftToolVisibility(leftType);
   renderOverview(image);
 
@@ -235,6 +235,21 @@ function getLeftLabel(leftType, toolName) {
   if (leftType === "original") return "Эталонное изображение";
   if (leftType === "tool") return toolName;
   return "Уменьшенная версия";
+}
+
+function isCompactViewport() {
+  return window.matchMedia("(max-width: 560px)").matches;
+}
+
+function getResponsiveLeftLabel(leftType, toolName) {
+  if (!isCompactViewport()) return getLeftLabel(leftType, toolName);
+  if (leftType === "original") return "Эталон";
+  if (leftType === "tool") return "Инструмент";
+  return "Уменьшенная";
+}
+
+function getResponsiveRightLabel(toolName) {
+  return isCompactViewport() ? "Инструмент" : toolName;
 }
 
 function updateLeftToolVisibility(leftType) {

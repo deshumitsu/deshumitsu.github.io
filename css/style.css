@@ -23,11 +23,14 @@ html {
   min-height: 100%;
   background: var(--bg);
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
   font-family: Inter, Arial, sans-serif;
   background:
     radial-gradient(circle at 10% 0%, rgba(94, 160, 255, 0.16), transparent 32%) no-repeat,
@@ -350,6 +353,7 @@ a.card:focus-visible {
 }
 
 .help-bubble {
+  display: none;
   position: absolute;
   left: 50%;
   bottom: calc(100% + 12px);
@@ -384,6 +388,7 @@ a.card:focus-visible {
 
 .help-tooltip:hover .help-bubble,
 .help-tooltip:focus-within .help-bubble {
+  display: block;
   opacity: 1;
   transform: translate(-50%, 0);
 }
@@ -500,6 +505,8 @@ a.card:focus-visible {
 
 .compare-container {
   width: min(1920px, calc(100% - 32px));
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .compare-container .page-title {
@@ -520,6 +527,7 @@ a.card:focus-visible {
   gap: 22px;
   align-items: center;
   margin: -12px 0 18px;
+  max-width: 100%;
 }
 
 .compare-topbar .help-tooltip {
@@ -531,12 +539,14 @@ a.card:focus-visible {
   display: grid;
   grid-template-columns: 300px minmax(0, 1fr) 300px;
   gap: 22px;
-  align-items: start;
+  align-items: stretch;
+  max-width: 100%;
 }
 
 .compare-panel {
   padding: 16px;
   min-width: 0;
+  max-width: 100%;
 }
 
 .image-browser {
@@ -561,6 +571,8 @@ a.card:focus-visible {
 .image-thumb {
   display: block;
   padding: 0;
+  min-width: 0;
+  max-width: 100%;
   color: var(--muted);
   background: transparent;
   border: 1px solid rgba(36, 52, 77, 0.8);
@@ -651,6 +663,7 @@ select:focus {
 
 .left-choice {
   width: 100%;
+  min-width: 0;
   min-height: 52px;
   padding: 10px 14px;
   color: var(--text);
@@ -703,6 +716,7 @@ select:focus {
   gap: 12px;
   align-items: center;
   width: 100%;
+  min-width: 0;
   min-height: 62px;
   padding: 10px;
   color: var(--text);
@@ -742,6 +756,7 @@ select:focus {
   position: relative;
   padding: 16px;
   min-width: 0;
+  max-width: 100%;
 }
 
 .compare-header {
@@ -942,6 +957,7 @@ select:focus {
 
 .overview-card {
   overflow: hidden;
+  min-width: 0;
   background: rgba(16, 25, 40, 0.82);
   border: 1px solid rgba(36, 52, 77, 0.9);
   border-radius: var(--radius);
@@ -1131,6 +1147,18 @@ td {
     justify-self: end;
   }
 
+  .compare-topbar .help-bubble {
+    right: 0;
+    left: auto;
+    width: min(300px, calc(100vw - 32px));
+    transform: translateY(8px);
+  }
+
+  .compare-topbar .help-tooltip:hover .help-bubble,
+  .compare-topbar .help-tooltip:focus-within .help-bubble {
+    transform: translateY(0);
+  }
+
   .compare-stage,
   .compare-actions,
   .tool-panel {
@@ -1163,7 +1191,7 @@ td {
   }
 
   .compare-container {
-    width: min(100% - 20px, 1920px);
+    width: min(1920px, calc(100% - 20px));
   }
 
   .compare-panel {

@@ -217,7 +217,7 @@ function updateComparison() {
   const metric = getResultMetric(category.id, tool.id);
 
   if (metric) {
-    metricsText.textContent = `PSNR: ${metric.psnr}\nSSIM: ${metric.ssim}\nLPIPS: ${metric.lpips}`;
+    metricsText.textContent = `PSNR: ${metric.psnr} (больше - лучше)\nSSIM: ${metric.ssim} (больше - лучше)\nLPIPS: ${metric.lpips} (меньше - лучше)`;
   } else {
     metricsText.textContent = "Для выбранной категории и инструмента показатели не указаны в таблице результатов.";
   }

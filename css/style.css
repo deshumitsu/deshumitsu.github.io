@@ -1238,6 +1238,25 @@ td {
     width: min(1920px, calc(100% - 20px));
   }
 
+  .compare-topbar .help-tooltip {
+    gap: 6px;
+    font-size: 14px;
+  }
+
+  .compare-topbar .help-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .compare-topbar .help-bubble {
+    width: min(210px, calc(100vw - 36px));
+    padding: 10px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
   .compare-panel {
     padding: 14px;
   }

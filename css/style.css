@@ -1275,7 +1275,16 @@ td {
   }
 
   .image-thumb-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .image-thumb {
+    border-radius: 10px;
+  }
+
+  .image-thumb img {
+    border-radius: 9px;
   }
 
   .tool-entry {

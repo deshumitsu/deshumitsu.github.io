@@ -453,9 +453,22 @@ function applyViewport() {
   imageCompare.style.setProperty("--pan-y", `${panY}px`);
   imageCompare.style.setProperty("--compare-zoom", zoomValue);
 
-  overviewGrid.style.setProperty("--pan-x", `${panX}px`);
-  overviewGrid.style.setProperty("--pan-y", `${panY}px`);
+  const overviewRect = overviewGrid.querySelector(".overview-image")?.getBoundingClientRect();
+  const overviewPan = overviewRect ? clampPanForRect(panX, panY, overviewRect) : { x: panX, y: panY };
+
+  overviewGrid.style.setProperty("--pan-x", `${overviewPan.x}px`);
+  overviewGrid.style.setProperty("--pan-y", `${overviewPan.y}px`);
   overviewGrid.style.setProperty("--compare-zoom", zoomValue);
+}
+
+function clampPanForRect(x, y, rect) {
+  const maxX = Math.max(0, (rect.width * zoomValue - rect.width) / 2);
+  const maxY = Math.max(0, (rect.height * zoomValue - rect.height) / 2);
+
+  return {
+    x: Math.max(-maxX, Math.min(maxX, x)),
+    y: Math.max(-maxY, Math.min(maxY, y)),
+  };
 }
 
 document.addEventListener("DOMContentLoaded", init);

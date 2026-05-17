@@ -242,14 +242,11 @@ function isCompactViewport() {
 }
 
 function getResponsiveLeftLabel(leftType, toolName) {
-  if (!isCompactViewport()) return getLeftLabel(leftType, toolName);
-  if (leftType === "original") return "Эталон";
-  if (leftType === "tool") return "Инструмент";
-  return "Уменьшенная";
+  return getLeftLabel(leftType, toolName);
 }
 
 function getResponsiveRightLabel(toolName) {
-  return isCompactViewport() ? "Инструмент" : toolName;
+  return toolName;
 }
 
 function updateLeftToolVisibility(leftType) {

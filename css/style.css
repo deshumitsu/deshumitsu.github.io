@@ -1245,8 +1245,9 @@ td {
 
   .compare-header span {
     max-width: 100%;
-    padding: 6px 10px;
-    font-size: 13px;
+    padding: 5px 8px;
+    font-size: 11px;
+    line-height: 1.2;
   }
 
   .compare-header span:first-child {

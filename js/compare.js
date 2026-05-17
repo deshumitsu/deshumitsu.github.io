@@ -46,6 +46,7 @@ function init() {
   renderToolBrowser(toolBrowser, "right");
   renderToolBrowser(leftToolBrowser, "left");
   updateComparison();
+  setSliderPosition(50);
 
   leftSidePicker.addEventListener("click", selectLeftType);
   zoomRange.addEventListener("input", () => setZoom(zoomRange.value));
@@ -221,8 +222,6 @@ function updateComparison() {
   } else {
     metricsText.textContent = "Для выбранной категории и инструмента показатели не указаны в таблице результатов.";
   }
-
-  setSliderPosition(50);
 }
 
 function getLeftSource(image, leftType, toolId) {

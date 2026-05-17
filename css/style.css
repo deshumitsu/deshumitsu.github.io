@@ -1014,6 +1014,9 @@ select:focus {
   left: 50%;
   width: calc(100% * var(--compare-zoom));
   height: calc(100% * var(--compare-zoom));
+  min-width: 100%;
+  min-height: 100%;
+  display: block;
   object-fit: cover;
   pointer-events: none;
   transform: translate(calc(-50% + var(--pan-x)), calc(-50% + var(--pan-y)));
@@ -1364,6 +1367,12 @@ td {
 
   .overview-heading h2 {
     font-size: 32px;
+  }
+
+  .overview-card h3 {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
   }
 
   .overview-image {

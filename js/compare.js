@@ -14,6 +14,8 @@ const imageCompare = document.getElementById("imageCompare");
 const zoomRange = document.getElementById("zoomRange");
 const resetCompare = document.getElementById("resetCompare");
 const overviewGrid = document.getElementById("overviewGrid");
+const compareStage = document.querySelector(".compare-stage");
+const toolPanel = document.querySelector(".tool-panel");
 
 let dragMode = null;
 let panTarget = null;
@@ -59,6 +61,9 @@ function init() {
   window.addEventListener("pointermove", drag);
   window.addEventListener("pointerup", stopDrag);
   window.addEventListener("pointercancel", stopDrag);
+  window.addEventListener("resize", syncToolPanelHeight);
+  leftImage.addEventListener("load", syncToolPanelHeight);
+  rightImage.addEventListener("load", syncToolPanelHeight);
 }
 
 function renderImageBrowser() {
@@ -222,6 +227,19 @@ function updateComparison() {
   } else {
     metricsText.textContent = "Для выбранной категории и инструмента показатели не указаны в таблице результатов.";
   }
+
+  requestAnimationFrame(syncToolPanelHeight);
+}
+
+function syncToolPanelHeight() {
+  if (!compareStage || !toolPanel) return;
+
+  if (!window.matchMedia("(min-width: 981px)").matches) {
+    toolPanel.style.height = "";
+    return;
+  }
+
+  toolPanel.style.height = `${compareStage.offsetHeight}px`;
 }
 
 function getLeftSource(image, leftType, toolId) {

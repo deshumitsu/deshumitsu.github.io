@@ -1562,8 +1562,9 @@ html[data-theme="light"] .total-row td {
   }
 
   .overview-card h3 {
-    min-height: 0;
-    display: block;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
   }
 
   .overview-image {

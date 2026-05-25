@@ -1373,13 +1373,17 @@ td {
     font-size: 32px;
   }
 
+  .overview-card {
+    align-self: start;
+  }
+
   .overview-card h3 {
-    min-height: 42px;
-    display: flex;
-    align-items: center;
+    min-height: 0;
+    display: block;
   }
 
   .overview-image {
+    flex: none;
     min-height: 180px;
   }
 }

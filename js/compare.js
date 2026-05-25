@@ -397,11 +397,7 @@ function renderOverview(image) {
     card.className = "overview-card";
 
     const title = document.createElement("h3");
-    if (item.title === "Уменьшенная версия") {
-      title.innerHTML = "Уменьшенная<br>версия";
-    } else {
-      title.textContent = item.title;
-    }
+    title.textContent = item.title;
 
     const imageBox = document.createElement("div");
     imageBox.className = "overview-image";

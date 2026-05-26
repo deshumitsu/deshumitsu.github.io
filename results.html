@@ -33,6 +33,38 @@
 
     <section class="section compact">
       <div class="section-heading">
+        <h2>Рекомендации по выбору инструмента</h2>
+        <p class="metric-note">
+          На основе визуальных оценок и числовых метрик ниже приведены практические рекомендации. Они не заменяют детальное
+          сравнение изображений, но помогают быстро выбрать наиболее подходящий инструмент под конкретную задачу.
+        </p>
+      </div>
+
+      <div class="recommendation-grid">
+        <article class="recommendation-card">
+          <h3>Фотографические изображения</h3>
+          <p><b>Topaz Gigapixel AI</b> лучше всего подходит для фотографий, где важны естественные текстуры и плавные тональные переходы.</p>
+        </article>
+
+        <article class="recommendation-card">
+          <h3>Портретные изображения</h3>
+          <p><b>Waifu2xGUIExtension</b> показал наиболее высокий средний визуальный балл в портретной категории.</p>
+        </article>
+
+        <article class="recommendation-card">
+          <h3>Скриншоты из цифровой среды</h3>
+          <p><b>Upscayl</b> лучше проявил себя на сложных цифровых сценах с большим количеством мелких деталей.</p>
+        </article>
+
+        <article class="recommendation-card">
+          <h3>Графика, текст и логотипы</h3>
+          <p><b>Waifu2xGUIExtension</b> наиболее рационален для контурной графики, интерфейсных элементов, текста и логотипов.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="section-heading">
         <h2>Средние визуальные оценки</h2>
       </div>
 
@@ -52,7 +84,7 @@
           <tr>
             <td>Фотографические изображения</td>
             <td>5,3</td>
-            <td>7,0</td>
+            <td><span class="score-best">Лучший выбор</span>7,0</td>
             <td>5,0</td>
             <td>5,0</td>
             <td>3,7</td>
@@ -62,12 +94,12 @@
             <td>4,3</td>
             <td>6,0</td>
             <td>2,7</td>
-            <td>8,0</td>
+            <td><span class="score-best">Лучший выбор</span>8,0</td>
             <td>2,3</td>
           </tr>
           <tr>
             <td>Скриншоты из цифровой среды</td>
-            <td>6,7</td>
+            <td><span class="score-best">Лучший выбор</span>6,7</td>
             <td>5,0</td>
             <td>2,0</td>
             <td>3,3</td>
@@ -78,7 +110,7 @@
             <td>4,3</td>
             <td>5,7</td>
             <td>1,3</td>
-            <td>10,0</td>
+            <td><span class="score-best">Лучший выбор</span>10,0</td>
             <td>2,7</td>
           </tr>
           <tr>
@@ -86,7 +118,7 @@
             <td>7,3</td>
             <td>6,7</td>
             <td>2,3</td>
-            <td>8,0</td>
+            <td><span class="score-best">Лучший выбор</span>8,0</td>
             <td>3,7</td>
           </tr>
           <tr class="total-row">
@@ -304,37 +336,6 @@
       </div>
     </section>
 
-    <section class="section compact">
-      <div class="section-heading">
-        <h2>Обобщение результатов</h2>
-      </div>
-
-      <div class="cards three">
-        <article class="card highlight">
-          <h3>Waifu2xGUIExtension</h3>
-          <p>
-            Инструмент получил наиболее высокий средний визуальный балл и показал сильные результаты на иллюстративной графике,
-            текстовых и логотипных элементах. По LPIPS он также оказался наиболее близким к эталону в нескольких категориях.
-          </p>
-        </article>
-
-        <article class="card highlight">
-          <h3>Upscayl</h3>
-          <p>
-            Показал устойчивые результаты при обработке фотографий и скриншотов из цифровой среды. В этих категориях инструмент
-            хорошо сохраняет структуру изображения, что подтверждается значениями SSIM и LPIPS.
-          </p>
-        </article>
-
-        <article class="card highlight">
-          <h3>Topaz Gigapixel AI</h3>
-          <p>
-            Продемонстрировал высокие показатели SSIM на изображениях с текстовыми и логотипными элементами, а также стабильные
-            результаты на фотографиях. При этом визуальная оценка показывает, что итоговый результат зависит от категории изображения.
-          </p>
-        </article>
-      </div>
-    </section>
   </section>
 </main>
 

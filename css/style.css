@@ -369,6 +369,53 @@ a.card:focus-visible {
   border-color: rgba(94, 160, 255, 0.35);
 }
 
+.recommendation-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.recommendation-card {
+  min-width: 0;
+  padding: 14px 18px;
+  background: rgba(16, 25, 40, 0.82);
+  border: 1px solid rgba(36, 52, 77, 0.9);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.recommendation-card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+.recommendation-card p {
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.score-best {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border: 1px solid rgba(94, 160, 255, 0.55);
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(94, 160, 255, 0.1);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.score-best {
+  display: flex;
+  margin: 0 auto 7px;
+  padding: 5px 8px;
+  justify-content: center;
+  white-space: nowrap;
+}
+
 .page {
   padding: 28px 0 56px;
 }
@@ -1211,6 +1258,7 @@ html[data-theme="light"] .site-header {
 
 html[data-theme="light"] .hero-card,
 html[data-theme="light"] .card,
+html[data-theme="light"] .recommendation-card,
 html[data-theme="light"] .content-card,
 html[data-theme="light"] .compare-panel,
 html[data-theme="light"] .compare-stage,
@@ -1336,6 +1384,10 @@ html[data-theme="light"] .total-row td {
   }
 
   .overview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .recommendation-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1551,6 +1603,15 @@ html[data-theme="light"] .total-row td {
 
   .overview-section {
     margin-top: 48px;
+  }
+
+  .recommendation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .score-best {
+    font-size: 10px;
+    padding: 4px 6px;
   }
 
   .overview-heading h2 {
